@@ -1,0 +1,130 @@
+2026-07-06 12:41:46,864 INFO sqlalchemy.engine.Engine select pg_catalog.version()
+2026-07-06 12:41:46,864 INFO sqlalchemy.engine.Engine [raw sql] {}
+2026-07-06 12:41:46,865 INFO sqlalchemy.engine.Engine select current_schema()
+2026-07-06 12:41:46,865 INFO sqlalchemy.engine.Engine [raw sql] {}
+2026-07-06 12:41:46,865 INFO sqlalchemy.engine.Engine show standard_conforming_strings
+2026-07-06 12:41:46,865 INFO sqlalchemy.engine.Engine [raw sql] {}
+2026-07-06 12:41:46,865 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-07-06 12:41:46,867 INFO sqlalchemy.engine.Engine INSERT INTO departments (dept_name) SELECT p0::VARCHAR FROM (VALUES (%(dept_name__0)s, 0), (%(dept_name__1)s, 1), (%(dept_name__2)s, 2)) AS imp_sen(p0, sen_counter) ORDER BY sen_counter RETURNING departments.dept_id, departments.dept_id AS dept_id__1
+2026-07-06 12:41:46,867 INFO sqlalchemy.engine.Engine [generated in 0.00005s (insertmanyvalues) 1/1 (ordered)] {'dept_name__0': 'Computer Science', 'dept_name__1': 'Information Technology', 'dept_name__2': 'Electronics'}
+2026-07-06 12:41:46,869 INFO sqlalchemy.engine.Engine COMMIT
+2026-07-06 12:41:46,871 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-07-06 12:41:46,873 INFO sqlalchemy.engine.Engine SELECT departments.dept_id AS departments_dept_id, departments.dept_name AS departments_dept_name 
+FROM departments 
+WHERE departments.dept_id = %(pk_1)s
+2026-07-06 12:41:46,873 INFO sqlalchemy.engine.Engine [generated in 0.00016s] {'pk_1': 1}
+2026-07-06 12:41:46,875 INFO sqlalchemy.engine.Engine SELECT departments.dept_id AS departments_dept_id, departments.dept_name AS departments_dept_name 
+FROM departments 
+WHERE departments.dept_id = %(pk_1)s
+2026-07-06 12:41:46,875 INFO sqlalchemy.engine.Engine [cached since 0.002397s ago] {'pk_1': 2}
+2026-07-06 12:41:46,876 INFO sqlalchemy.engine.Engine SELECT departments.dept_id AS departments_dept_id, departments.dept_name AS departments_dept_name 
+FROM departments 
+WHERE departments.dept_id = %(pk_1)s
+2026-07-06 12:41:46,877 INFO sqlalchemy.engine.Engine [cached since 0.003641s ago] {'pk_1': 3}
+2026-07-06 12:41:46,878 INFO sqlalchemy.engine.Engine INSERT INTO students (student_name, email, enrollment_year, dept_id) SELECT p0::VARCHAR, p1::VARCHAR, p2::INTEGER, p3::INTEGER FROM (VALUES (%(student_name__0)s, %(email__0)s, %(enrollment_year__0)s, %(dept_id__0)s, 0), (%(student_name__1)s, %(email_ ... 318 characters truncated ... en_counter) ORDER BY sen_counter RETURNING students.student_id, students.student_id AS student_id__1
+2026-07-06 12:41:46,879 INFO sqlalchemy.engine.Engine [generated in 0.00006s (insertmanyvalues) 1/1 (ordered)] {'student_name__0': 'Rahul', 'dept_id__0': 1, 'enrollment_year__0': 2022, 'email__0': 'rahul@gmail.com', 'student_name__1': 'Anjali', 'dept_id__1': 1, 'enrollment_year__1': 2023, 'email__1': 'anjali@gmail.com', 'student_name__2': 'Vijay', 'dept_id__2': 2, 'enrollment_year__2': 2021, 'email__2': 'vijay@gmail.com', 'student_name__3': 'Sneha', 'dept_id__3': 3, 'enrollment_year__3': 2022, 'email__3': 'sneha@gmail.com', 'student_name__4': 'Amit', 'dept_id__4': 1, 'enrollment_year__4': 2023, 'email__4': 'amit@gmail.com'}
+2026-07-06 12:41:46,882 INFO sqlalchemy.engine.Engine COMMIT
+2026-07-06 12:41:46,883 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-07-06 12:41:46,884 INFO sqlalchemy.engine.Engine INSERT INTO courses (course_name, credits) SELECT p0::VARCHAR, p1::INTEGER FROM (VALUES (%(course_name__0)s, %(credits__0)s, 0), (%(course_name__1)s, %(credits__1)s, 1), (%(course_name__2)s, %(credits__2)s, 2)) AS imp_sen(p0, p1, sen_counter) ORDER BY sen_counter RETURNING courses.course_id, courses.course_id AS course_id__1
+2026-07-06 12:41:46,884 INFO sqlalchemy.engine.Engine [generated in 0.00005s (insertmanyvalues) 1/1 (ordered)] {'credits__0': 4, 'course_name__0': 'Database Systems', 'credits__1': 3, 'course_name__1': 'Python Programming', 'credits__2': 4, 'course_name__2': 'Operating Systems'}
+2026-07-06 12:41:46,886 INFO sqlalchemy.engine.Engine COMMIT
+2026-07-06 12:41:46,888 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-07-06 12:41:46,889 INFO sqlalchemy.engine.Engine SELECT courses.course_id AS courses_course_id, courses.course_name AS courses_course_name, courses.credits AS courses_credits 
+FROM courses 
+WHERE courses.course_id = %(pk_1)s
+2026-07-06 12:41:46,889 INFO sqlalchemy.engine.Engine [generated in 0.00020s] {'pk_1': 3}
+2026-07-06 12:41:46,891 INFO sqlalchemy.engine.Engine SELECT courses.course_id AS courses_course_id, courses.course_name AS courses_course_name, courses.credits AS courses_credits 
+FROM courses 
+WHERE courses.course_id = %(pk_1)s
+2026-07-06 12:41:46,891 INFO sqlalchemy.engine.Engine [cached since 0.002332s ago] {'pk_1': 1}
+2026-07-06 12:41:46,892 INFO sqlalchemy.engine.Engine SELECT courses.course_id AS courses_course_id, courses.course_name AS courses_course_name, courses.credits AS courses_credits 
+FROM courses 
+WHERE courses.course_id = %(pk_1)s
+2026-07-06 12:41:46,893 INFO sqlalchemy.engine.Engine [cached since 0.004189s ago] {'pk_1': 2}
+2026-07-06 12:41:46,895 INFO sqlalchemy.engine.Engine SELECT students.student_id AS students_student_id, students.student_name AS students_student_name, students.email AS students_email, students.enrollment_year AS students_enrollment_year, students.dept_id AS students_dept_id 
+FROM students 
+WHERE students.student_id = %(pk_1)s
+2026-07-06 12:41:46,896 INFO sqlalchemy.engine.Engine [generated in 0.00080s] {'pk_1': 5}
+2026-07-06 12:41:46,897 INFO sqlalchemy.engine.Engine SELECT students.student_id AS students_student_id, students.student_name AS students_student_name, students.email AS students_email, students.enrollment_year AS students_enrollment_year, students.dept_id AS students_dept_id 
+FROM students 
+WHERE students.student_id = %(pk_1)s
+2026-07-06 12:41:46,898 INFO sqlalchemy.engine.Engine [cached since 0.002855s ago] {'pk_1': 1}
+2026-07-06 12:41:46,899 INFO sqlalchemy.engine.Engine SELECT students.student_id AS students_student_id, students.student_name AS students_student_name, students.email AS students_email, students.enrollment_year AS students_enrollment_year, students.dept_id AS students_dept_id 
+FROM students 
+WHERE students.student_id = %(pk_1)s
+2026-07-06 12:41:46,899 INFO sqlalchemy.engine.Engine [cached since 0.004444s ago] {'pk_1': 3}
+2026-07-06 12:41:46,900 INFO sqlalchemy.engine.Engine SELECT students.student_id AS students_student_id, students.student_name AS students_student_name, students.email AS students_email, students.enrollment_year AS students_enrollment_year, students.dept_id AS students_dept_id 
+FROM students 
+WHERE students.student_id = %(pk_1)s
+2026-07-06 12:41:46,900 INFO sqlalchemy.engine.Engine [cached since 0.005321s ago] {'pk_1': 2}
+2026-07-06 12:41:46,901 INFO sqlalchemy.engine.Engine INSERT INTO enrollments (student_id, course_id) SELECT p0::INTEGER, p1::INTEGER FROM (VALUES (%(student_id__0)s, %(course_id__0)s, 0), (%(student_id__1)s, %(course_id__1)s, 1), (%(student_id__2)s, %(course_id__2)s, 2), (%(student_id__3)s, %(course_id__3)s, 3)) AS imp_sen(p0, p1, sen_counter) ORDER BY sen_counter RETURNING enrollments.enrollment_id, enrollments.enrollment_id AS enrollment_id__1
+2026-07-06 12:41:46,901 INFO sqlalchemy.engine.Engine [generated in 0.00005s (insertmanyvalues) 1/1 (ordered)] {'course_id__0': 1, 'student_id__0': 1, 'course_id__1': 2, 'student_id__1': 2, 'course_id__2': 3, 'student_id__2': 3, 'course_id__3': 1, 'student_id__3': 5}
+2026-07-06 12:41:46,904 INFO sqlalchemy.engine.Engine COMMIT
+
+Departments, Students, Courses and Enrollments inserted.
+
+Students in Computer Science Department
+2026-07-06 12:41:46,905 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-07-06 12:41:46,907 INFO sqlalchemy.engine.Engine SELECT students.student_id AS students_student_id, students.student_name AS students_student_name, students.email AS students_email, students.enrollment_year AS students_enrollment_year, students.dept_id AS students_dept_id 
+FROM students JOIN departments ON departments.dept_id = students.dept_id 
+WHERE departments.dept_name = %(dept_name_1)s
+2026-07-06 12:41:46,907 INFO sqlalchemy.engine.Engine [generated in 0.00017s] {'dept_name_1': 'Computer Science'}
+Rahul
+Anjali
+Amit
+
+Enrollment Details (Without joinedload)
+
+2026-07-06 12:41:46,909 INFO sqlalchemy.engine.Engine SELECT enrollments.enrollment_id AS enrollments_enrollment_id, enrollments.student_id AS enrollments_student_id, enrollments.course_id AS enrollments_course_id 
+FROM enrollments
+2026-07-06 12:41:46,911 INFO sqlalchemy.engine.Engine [generated in 0.00265s] {}
+2026-07-06 12:41:46,915 INFO sqlalchemy.engine.Engine SELECT courses.course_id AS courses_course_id, courses.course_name AS courses_course_name, courses.credits AS courses_credits 
+FROM courses 
+WHERE courses.course_id = %(pk_1)s
+2026-07-06 12:41:46,916 INFO sqlalchemy.engine.Engine [generated in 0.00116s] {'pk_1': 1}
+Rahul -> Database Systems
+2026-07-06 12:41:46,918 INFO sqlalchemy.engine.Engine SELECT courses.course_id AS courses_course_id, courses.course_name AS courses_course_name, courses.credits AS courses_credits 
+FROM courses 
+WHERE courses.course_id = %(pk_1)s
+2026-07-06 12:41:46,919 INFO sqlalchemy.engine.Engine [cached since 0.003989s ago] {'pk_1': 2}
+Anjali -> Python Programming
+2026-07-06 12:41:46,922 INFO sqlalchemy.engine.Engine SELECT students.student_id AS students_student_id, students.student_name AS students_student_name, students.email AS students_email, students.enrollment_year AS students_enrollment_year, students.dept_id AS students_dept_id 
+FROM students 
+WHERE students.student_id = %(pk_1)s
+2026-07-06 12:41:46,923 INFO sqlalchemy.engine.Engine [generated in 0.00080s] {'pk_1': 3}
+2026-07-06 12:41:46,925 INFO sqlalchemy.engine.Engine SELECT courses.course_id AS courses_course_id, courses.course_name AS courses_course_name, courses.credits AS courses_credits 
+FROM courses 
+WHERE courses.course_id = %(pk_1)s
+2026-07-06 12:41:46,925 INFO sqlalchemy.engine.Engine [cached since 0.01062s ago] {'pk_1': 3}
+Vijay -> Operating Systems
+Amit -> Database Systems
+2026-07-06 12:41:46,929 INFO sqlalchemy.engine.Engine SELECT students.student_id AS students_student_id, students.student_name AS students_student_name, students.email AS students_email, students.enrollment_year AS students_enrollment_year, students.dept_id AS students_dept_id 
+FROM students 
+WHERE students.email = %(email_1)s 
+ LIMIT %(param_1)s
+2026-07-06 12:41:46,929 INFO sqlalchemy.engine.Engine [generated in 0.00030s] {'email_1': 'rahul@gmail.com', 'param_1': 1}
+2026-07-06 12:41:46,934 INFO sqlalchemy.engine.Engine UPDATE students SET enrollment_year=%(enrollment_year)s WHERE students.student_id = %(students_student_id)s
+2026-07-06 12:41:46,934 INFO sqlalchemy.engine.Engine [generated in 0.00037s] {'enrollment_year': 2024, 'students_student_id': 1}
+2026-07-06 12:41:46,936 INFO sqlalchemy.engine.Engine COMMIT
+
+Student updated successfully.
+2026-07-06 12:41:46,939 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-07-06 12:41:46,940 INFO sqlalchemy.engine.Engine SELECT enrollments.enrollment_id AS enrollments_enrollment_id, enrollments.student_id AS enrollments_student_id, enrollments.course_id AS enrollments_course_id 
+FROM enrollments 
+ LIMIT %(param_1)s
+2026-07-06 12:41:46,940 INFO sqlalchemy.engine.Engine [generated in 0.00039s] {'param_1': 1}
+2026-07-06 12:41:46,945 INFO sqlalchemy.engine.Engine DELETE FROM enrollments WHERE enrollments.enrollment_id = %(enrollment_id)s
+2026-07-06 12:41:46,945 INFO sqlalchemy.engine.Engine [generated in 0.00038s] {'enrollment_id': 1}
+2026-07-06 12:41:46,946 INFO sqlalchemy.engine.Engine COMMIT
+Enrollment deleted successfully.
+
+Enrollment Details (Using joinedload)
+
+2026-07-06 12:41:46,949 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2026-07-06 12:41:46,954 INFO sqlalchemy.engine.Engine SELECT enrollments.enrollment_id AS enrollments_enrollment_id, enrollments.student_id AS enrollments_student_id, enrollments.course_id AS enrollments_course_id, students_1.student_id AS students_1_student_id, students_1.student_name AS students_1_student_name, students_1.email AS students_1_email, students_1.enrollment_year AS students_1_enrollment_year, students_1.dept_id AS students_1_dept_id, courses_1.course_id AS courses_1_course_id, courses_1.course_name AS courses_1_course_name, courses_1.credits AS courses_1_credits 
+FROM enrollments LEFT OUTER JOIN students AS students_1 ON students_1.student_id = enrollments.student_id LEFT OUTER JOIN courses AS courses_1 ON courses_1.course_id = enrollments.course_id
+2026-07-06 12:41:46,955 INFO sqlalchemy.engine.Engine [generated in 0.00035s] {}
+Anjali -> Python Programming
+Vijay -> Operating Systems
+Amit -> Database Systems
+2026-07-06 12:41:46,958 INFO sqlalchemy.engine.Engine ROLLBACK
