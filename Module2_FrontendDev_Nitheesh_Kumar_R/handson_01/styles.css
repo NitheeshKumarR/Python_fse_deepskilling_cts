@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: black;
+}
+header{
+    padding:10px 20px;
+    background-color: #c9c9c9;
+
+}
+header nav ul{
+    display :flex;
+    
+}
+header nav ul li{
+    list-style: none;
+    margin-right: 20px;
+    display: inline;
+
+}
+header nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+}
+
+#hero{
+    text-align: center;
+    margin:30px auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+button{
+    width:fit-content;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border-radius:20px;
+    border:2px solid black;
+}
+button:hover{
+    background-color: black;
+    color:white;
+    cursor: pointer;
+}
+#courses{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 1200px;
+    margin: 0 auto;
+}
+.course-card{
+    width:800px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #c9c9c9;
+    border: 1px solid rgb(158, 158, 158);
+    box-shadow:  -2px 2px 3px 0px rgb(63, 61, 61);
+}
