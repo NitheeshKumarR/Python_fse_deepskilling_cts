@@ -1,0 +1,23 @@
+<div class="course-list-container">
+  <h2>Available Courses</h2>
+  
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search courses...">
+
+  <div *ngIf="loading" class="spinner">Loading...</div>
+
+  <div *ngIf="!loading">
+    <div *ngIf="filteredCourses.length === 0">
+      <p>No courses found</p>
+    </div>
+
+    <div class="courses-grid" *ngIf="filteredCourses.length > 0">
+      <app-course-card 
+        *ngFor="let course of filteredCourses; trackBy: trackByCode" 
+        [name]="course.name"
+        [code]="course.code"
+        [credits]="course.credits"
+        [grade]="course.grade">
+      </app-course-card>
+    </div>
+  </div>
+</div>

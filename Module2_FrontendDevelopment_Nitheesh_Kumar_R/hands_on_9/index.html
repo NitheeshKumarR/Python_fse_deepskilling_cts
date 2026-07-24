@@ -1,0 +1,54 @@
+<!--
+Accessibility Audit & Fixes (WCAG 2.1)
+Initial Score: 85 (estimated)
+Issues Flagged:
+1. Missing form labels for input #search-courses.
+2. Missing keyboard accessibility (tabindex and keydown) on interactive course cards.
+3. Missing aria-live region for search results announcement.
+4. Missing ARIA labels for navigation.
+
+Fixes applied below and in app.js / style.css.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduCore Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Polyfill for older browsers -->
+    <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+</head>
+<body>
+
+    <header>
+        <h1>EduCore Student Portal</h1>
+        <nav aria-label="Main navigation">
+            <a href="#" aria-current="page">Home</a>
+            <a href="#">Courses</a>
+            <a href="#">Profile</a>
+        </nav>
+        <button id="menu-btn" aria-expanded="false" aria-controls="main-menu">Menu</button>
+    </header>
+
+    <main>
+        <h2>Courses</h2>
+
+        <div class="controls">
+            <label for="search-courses">Search Courses:</label>
+            <input id="search-courses" type="text" placeholder="Search courses...">
+            <button id="sort-btn" type="button">Sort by Credits</button>
+        </div>
+
+        <p id="results-count" role="status" aria-live="polite"></p>
+
+        <div class="course-grid"></div>
+
+        <p id="total-credits"></p>
+
+        <div id="selected-course" role="alert"></div>
+    </main>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<div class="profile-container">
+  <h2>Student Profile</h2>
+  
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name" type="text">
+      <div class="error" *ngIf="profileForm.get('name')?.touched && profileForm.get('name')?.invalid">
+        Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" type="email">
+      <div class="error" *ngIf="profileForm.get('email')?.touched && profileForm.get('email')?.invalid">
+        <span *ngIf="profileForm.get('email')?.errors?.['required']">Email is required</span>
+        <span *ngIf="profileForm.get('email')?.errors?.['email']">Enter a valid email</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="semester">Semester:</label>
+      <input id="semester" formControlName="semester" type="number">
+      <div class="error" *ngIf="profileForm.get('semester')?.touched && profileForm.get('semester')?.invalid">
+        <span *ngIf="profileForm.get('semester')?.errors?.['required']">Semester is required</span>
+        <span *ngIf="profileForm.get('semester')?.errors?.['min'] || profileForm.get('semester')?.errors?.['max']">Semester must be between 1 and 8</span>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="profileForm.invalid">Submit</button>
+  </form>
+</div>
