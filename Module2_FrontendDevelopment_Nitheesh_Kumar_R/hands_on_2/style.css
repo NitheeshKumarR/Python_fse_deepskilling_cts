@@ -1,0 +1,237 @@
+/* ============================================================
+   EduCore Student Portal — styles.css
+   Mobile-First: Flexbox, Grid, Media Queries, Fluid Typography
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f5f5f5;
+}
+
+/* ── Header (Flexbox) ── */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background-color: #1e3a5f;
+    color: #ffffff;
+    padding: 16px 24px;
+}
+
+header h1 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ── Hero Section (Flexbox, column) ── */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    min-height: 40vh;
+    justify-content: center;
+    padding: 24px;
+    background-color: #2a4d75;
+    color: #ffffff;
+}
+
+.hero button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f0a500;
+    color: #1e3a5f;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ── Stats Bar (Flexbox, equal spacing) ── */
+.stats-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+}
+
+.stat-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e3a5f;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #666666;
+}
+
+/* ── Main Content ── */
+main {
+    max-width: 960px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+section, aside {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #1e3a5f;
+}
+
+/* ── Course Cards (CSS Grid, auto-fit) ── */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.course-card {
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    padding: 16px;
+    min-height: 120px;
+    align-self: stretch;
+    background-color: #fafafa;
+}
+
+.course-card h3 {
+    color: #1e3a5f;
+    margin-bottom: 8px;
+}
+
+/* ── Table ── */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border: 1px solid #dddddd;
+}
+
+th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* ── Lists ── */
+ul, ol {
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* ── Aside ── */
+aside {
+    background-color: #fffbe6;
+    border-left: 4px solid #f0a500;
+}
+
+/* ── Footer ── */
+footer {
+    text-align: center;
+    padding: 16px;
+    background-color: #1e3a5f;
+    color: #ffffff;
+    font-size: 14px;
+    margin-top: 32px;
+}
+
+/* ============================================================
+   Media Queries — Mobile-First (min-width breakpoints)
+   ============================================================ */
+
+/* Tablet: 768px and up */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    .hero {
+        padding: 40px;
+    }
+
+    .stats-bar {
+        flex-direction: row;
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop: 1024px and up */
+@media (min-width: 1024px) {
+    .hero {
+        padding: 60px;
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

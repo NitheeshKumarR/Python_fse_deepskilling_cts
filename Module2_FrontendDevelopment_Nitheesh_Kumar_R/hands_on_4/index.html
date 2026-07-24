@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduCore - Async & Fetch</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Task 3 Step 55: Axios via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>EduCore Student Portal</h1>
+    </header>
+
+    <main>
+
+        <section id="courses-section">
+            <h2>Courses</h2>
+            <p id="courses-loading">Loading courses...</p>
+            <div class="course-grid" id="course-grid"></div>
+            <p id="total-credits"></p>
+        </section>
+
+        <section id="notifications">
+            <h2>Notifications</h2>
+            <p id="notif-loading">Loading...</p>
+            <div id="notif-error"></div>
+            <div id="notif-list"></div>
+        </section>
+
+        <section id="axios-section">
+            <h2>Axios — User 1 Posts</h2>
+            <div id="axios-posts"></div>
+        </section>
+
+    </main>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
